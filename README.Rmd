@@ -39,7 +39,7 @@ As an example of how to process data consider the example above (which is an exa
 data <- read.csv("data/dataEg1.csv", header = FALSE, stringsAsFactors = FALSE)
 ``` 
 
-Note that we set the `header` argument as false. This is done so that **Data** is located in the first time of the imported data file. This must always be the case. Also, for simplicity I have treated all string vectors as characters, not factors, but this doesn't need to be the case. Once the data is imported in R we can process it by calling `processDat` on our data frame:
+Note that we set the `header` argument as false. This is done so that **Data** is located in the first row of the imported data file. This must always be the case. Also, for simplicity I have treated all string vectors as characters, not factors, but this doesn't need to be the case. Once the data is imported in R we can process it by calling `processDat` on our data frame:
 
 ```{r}
 data_proc <- processDat(data)
