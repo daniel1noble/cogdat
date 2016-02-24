@@ -1,0 +1,13 @@
+Package: cogdat
+Title: Processes cognition data files from an easy to read format to analysis
+    ready format
+Version: 0.0.0.9000
+Authors@R: person("Daniel", "Noble", email = "daniel.noble@unsw.edu.au", role = c("aut", "cre"))
+Description: This package contains a single function `processDat` that will
+    read in specifically formatted cognition data files (i.e. data that is more user
+    friendly when running big experiments) and formats it to be analysis ready.
+Depends:
+    R (>= 3.2.3)
+License: None
+LazyData: true
+RoxygenNote: 5.0.1
