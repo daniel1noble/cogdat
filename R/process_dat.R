@@ -2,7 +2,7 @@
 #' Converting a complex cognition dataset from horizontal format to vertical format
 #' @param data The formatted cognition data frame containing the keys: ID, Date and var
 #' @return data.frame Returns a formatted data frame in vertical format that is ready for analysis
-#'
+#' @description
 #' @author Daniel Noble - daniel.noble@unsw.edu.au
 #' @ examples
 #' data <- read.csv("CognitionIndividual.csv", header = FALSE, stringsAsFactors = FALSE)
@@ -11,21 +11,18 @@
 
 processDat <- function(data){
 	# extract row, column for the relevant variables in c(row, col) format to ensure proper formatting of data
-	idDim    <-  c(grep("[Ii][Dd]", data[,1]),1)
-	dateDim <- c(1,grep("[Dd]ate", t(data[1,])))
-	varDim  <-  c(idDim[1], dateDim[2])
+		idDim    <-  c(grep("[Ii][Dd]", data[,1]),1)
+		dateDim <- c(1,grep("[Dd]ate", t(data[1,])))
+		varDim  <-  c(idDim[1], dateDim[2])
 
 	# Extract total number of trials
-	numtrials <- ncol(data) - dateDim[2]
+		numtrials <- ncol(data) - dateDim[2]
 	
 	## Create a replicate set of rows for each lizard that totals the number of trials for the first set of columns
-		datFirst <- unique(data[(idDim[1]+1):nrow(data), 1:(dateDim[2]-1)])
-		datFirst <- datFirst[-2,]
-		dat <- datFirst[rep(rownames(datFirst), each=numtrials),]
+		           datFirst <- unique(data[(idDim[1]+1):nrow(data), 1:(dateDim[2]-1)])
+			      dat <- datFirst[rep(rownames(datFirst), each=numtrials),]
 		rownames(dat) <- 1:nrow(dat)
 		colnames(dat) <- as.character(data[idDim[1], 1:(varDim[2]-1)])
-
-	# Extract Time and dates
 
 	#Extract the Trial data	
 		trialdat <- t(data[,varDim[2]:ncol(data)])
