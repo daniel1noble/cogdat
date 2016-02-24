@@ -23,7 +23,7 @@ processDat <- function(data){
 		           datFirst <- datFirst[-2,] ## Seems to be necessary 
 			      dat <- datFirst[rep(rownames(datFirst), each=numtrials),]
 		rownames(dat) <- 1:nrow(dat)
-		colnames(dat) <- as.character(data[idDim[1], 1:(varDim[2]-1)])
+		colnames(dat) <- data[idDim[1], 1:(varDim[2]-1)] # Problem here for column names because factors. Can easily get around by using stringsAsFactors on loading data but should fix this to make sure that factors are coerced to characters
 
 	#Extract the Trial data	
 		trialdat <- t(data[,varDim[2]:ncol(data)])
