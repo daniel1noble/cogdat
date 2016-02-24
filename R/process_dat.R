@@ -20,6 +20,7 @@ processDat <- function(data){
 	
 	## Create a replicate set of rows for each lizard that totals the number of trials for the first set of columns
 		           datFirst <- unique(data[(idDim[1]+1):nrow(data), 1:(dateDim[2]-1)])
+		           datFirst <- datFirst[-2,] ## Seems to be necessary 
 			      dat <- datFirst[rep(rownames(datFirst), each=numtrials),]
 		rownames(dat) <- 1:nrow(dat)
 		colnames(dat) <- as.character(data[idDim[1], 1:(varDim[2]-1)])
