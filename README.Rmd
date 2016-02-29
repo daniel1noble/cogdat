@@ -58,14 +58,20 @@ head(data_procEg2)
 Now the data is formatted vertically and you can change the variables to the relevant types (numeric, factors, integer etc) and it will be ready for analysis. 
 
 ```{r}
-|ID |Sex |Chan |trt |Date     |Trial |Task |correct |latency |researcher |
-|:--|:---|:----|:---|:--------|:-----|:----|:-------|:-------|:----------|
-|12 |M   |1    |2   |10.11.12 |1     |1    |1       |12      |FK         |
-|12 |M   |1    |2   |11.11.12 |2     |1    |1       |2       |FK         |
-|12 |M   |1    |2   |12.11.12 |3     |1    |1       |34      |FK         |
-|12 |M   |1    |2   |13.11.12 |4     |1    |0       |5       |FK         |
-|12 |M   |1    |2   |14.11.12 |5     |1    |0       |6       |FK         |
-|12 |M   |1    |2   |15.11.12 |6     |1    |0       |7       |FK         |
+head(data_procEg1)
+ID Sex Chan trt     Date Trial Task correct latency researcher
+1  12   M    1   2 10.11.12     1    1       1      12         FK
+2  12   M    1   2 11.11.12     2    1       1       2         FK
+3  12   M    1   2 12.11.12     3    1       1      34         FK
+4  12   M    1   2 13.11.12     4    1       0       5         FK
+5  12   M    1   2 14.11.12     5    1       0       6         FK
+6  12   M    1   2 15.11.12     6    1       0       7         FK
+7  34   F    1   2 10.11.12     1    1       1      12         FK
+8  34   F    1   2 11.11.12     2    1       1       2         FK
+9  34   F    1   2 12.11.12     3    1       1      34         FK
+10 34   F    1   2 13.11.12     4    1       0       5         FK
+11 34   F    1   2 14.11.12     5    1       0       6         FK
+12 34   F    1   2 15.11.12     6    1       0       7         FK
 ```
 
 **Note**: This function is in very early stages yet and one needs to be careful to correctly check the output with the raw data that was put in to make sure everything matches. I have NOT implemented tests or proper warning messages at this stage. If you have questions, concerns and/or suggestions for improvement please let me know.
