@@ -12,8 +12,15 @@ processDat(data)
 \value{
 data.frame Returns a formatted data frame in vertical format that is ready for analysis
 }
-\description{
-Converting a complex cognition dataset from horizontal format to vertical format
+\examples{
+dataEg1 <- data(dataEg1)
+data_procEg1 <- processDat(dataEg1)
+head(data_procEg1)
+
+## Extended data with some new columns
+dataEg2 <- data(dataEg2)
+data_procEg2 <- processDat(dataEg2)
+head(data_procEg2)
 }
 \author{
 Daniel Noble - daniel.noble@unsw.edu.au

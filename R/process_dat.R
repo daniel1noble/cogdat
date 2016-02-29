@@ -4,11 +4,16 @@
 #' @return data.frame Returns a formatted data frame in vertical format that is ready for analysis
 #' @description
 #' @author Daniel Noble - daniel.noble@unsw.edu.au
-#' @ examples
-#' data <- read.csv("CognitionIndividual.csv", header = FALSE, stringsAsFactors = FALSE)
-#' data_proc <- processDat(data)
+#' @examples
+#' dataEg1 <- data(dataEg1)
+#' data_procEg1 <- processDat(dataEg1)
+#' head(data_procEg1)
+#'
+#' ## Extended data with some new columns
+#' dataEg2 <- data(dataEg2)
+#' data_procEg2 <- processDat(dataEg2)
+#' head(data_procEg2)
 #' @export
-
 processDat <- function(data){
 	# extract row, column for the relevant variables in c(row, col) format to ensure proper formatting of data
 		idDim    <-  c(grep("[Ii][Dd]", data[,1]),1)
