@@ -33,18 +33,39 @@ devtools::install_github("daniel1noble/cogdat")
 library(cogdat)
 ```
 
-As an example of how to process data consider the example above (which is an example data file). First, we must import the data file by navigating to our working directory, starting R (or setting our working directory to the location where our data is located) and loading the non-processed data file as follows:
+As an example of how to process data consider the example above (which is an example data file). First, we must import the non-processed data file(s) as follows:
 
 ```{r} 
-data <- read.csv("data/dataEg1.csv", header = FALSE, stringsAsFactors = FALSE)
+data(dataEg1)
+head(dataEg1)
+
+data(dataEg2)
+head(dataEg2)
 ``` 
 
 Note that we set the `header` argument as false. This is done so that **Data** is located in the first row of the imported data file. This must always be the case. Also, it is important to treat all strings variables as characters, not factors (at least until I fix a few things up). Once the data are imported in R we can process it by calling `processDat` on our data frame:
 
 ```{r}
-data_proc <- processDat(data)
+#Load the dataset that contains the above table
+data_procEg1 <- processDat(dataEg1)
+head(data_procEg1)
+
+#Try with the second example, which is a bit more elaborate. 
+data_procEg2 <- processDat(dataEg2)
+head(data_procEg2)
 ```
 
 Now the data is formatted vertically and you can change the variables to the relevant types (numeric, factors, integer etc) and it will be ready for analysis. 
+
+```{r}
+|ID |Sex |Chan |trt |Date     |Trial |Task |correct |latency |researcher |
+|:--|:---|:----|:---|:--------|:-----|:----|:-------|:-------|:----------|
+|12 |M   |1    |2   |10.11.12 |1     |1    |1       |12      |FK         |
+|12 |M   |1    |2   |11.11.12 |2     |1    |1       |2       |FK         |
+|12 |M   |1    |2   |12.11.12 |3     |1    |1       |34      |FK         |
+|12 |M   |1    |2   |13.11.12 |4     |1    |0       |5       |FK         |
+|12 |M   |1    |2   |14.11.12 |5     |1    |0       |6       |FK         |
+|12 |M   |1    |2   |15.11.12 |6     |1    |0       |7       |FK         |
+```
 
 **Note**: This function is in very early stages yet and one needs to be careful to correctly check the output with the raw data that was put in to make sure everything matches. I have NOT implemented tests or proper warning messages at this stage. If you have questions, concerns and/or suggestions for improvement please let me know.
