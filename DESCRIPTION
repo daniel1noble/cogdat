@@ -8,6 +8,7 @@ Description: This package contains a single function `processDat` that will
     friendly when running big experiments) and formats it to be analysis ready.
 Depends:
     R (>= 3.2.3)
-License: None
+License: GPL-2
 LazyData: true
 RoxygenNote: 5.0.1
+Suggests: testthat

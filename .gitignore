@@ -1,2 +1,4 @@
 .DS_Store
 .Rhistory
+cogdat.Rcheck/
+cogdat*tar.gz

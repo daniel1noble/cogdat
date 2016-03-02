@@ -1,5 +1,7 @@
 # cogdat
 
+[![Build Status](https://travis-ci.org/daniel1noble/cogdat.png?branch =master)](https://travis-ci.org/daniel1noble/cogdat)
+
 Package containing a single function which can be used to process datasets collected on learning or cognition experiments from horizontal format to vertical format for analysis. Data needs to be in a specific format for the `processDat` function to work correctly. 
 
 ### How to set up data
